@@ -292,7 +292,7 @@ import { supabase } from "./js/supabase.js";
 
 document.getElementById("trackBtn").onclick = async () => {
 
-const number = document.getElementById("tracking").value.trim();
+const number = document.getElementById("tracking").value;
 
 const { data, error } = await supabase
 .from("deliveries")
@@ -308,14 +308,40 @@ document.getElementById("result").innerHTML = `
 `;
 return;
 }
-    
-  const { data: historyData } = await supabase
-.from("shipment_history")
-.select("*")
-.eq("tracking_number", number)
-.order("created_at", { ascending: true });
+  
 
-  const history = historyData || [];
+  const history = [
+{
+    status: "Shipment Created",
+    location: "Warehouse",
+    description: "Package received and registered"
+},
+{
+    status: "Picked Up",
+    location: "Sender Location",
+    description: "Package collected from sender"
+},
+{
+    status: "In Transit",
+    location: "International Transit",
+    description: "Shipment is moving"
+},
+{
+    status: "Arrived",
+    location: "Destination Facility",
+    description: "Package arrived in destination country"
+},
+{
+ status: "Delivered",
+ location: "Receiver Address",
+ description: "Package delivered successfully"
+},
+{
+ status: "Canceled",
+ location: "Cancelled",
+ description: "Shipment was canceled"
+}
+];
 console.log("History:", history);
 
 let currentStatusIndex = history.findIndex(item => item.status === data.status);
@@ -354,17 +380,45 @@ ${data.status}
 <div class="timeline">
 
 <h3>Shipment History</h3>
-${history.length ? history.map(item => `
-<div class="timeline-item">
-    <div class="status-dot"></div>
+${[
+  {
+    status: "Shipment Created",
+    title: "Origin Warehouse",
+    text: "Package received and registered"
+  },
+  {
+    status: "Picked Up",
+    title: "Sender Location",
+    text: "Package collected from sender"
+  },
+  {
+    status: "In Transit",
+    title: "International Transit",
+    text: "Shipment is moving by sea"
+  },
+  {
+    status: "Arrived",
+    title: "Destination Facility",
+    text: "Package arrived in destination country"
+  },
+  {
+    status: "Delivered",
+    title: "Receiver Address",
+    text: "Package delivered successfully"
+  }
+]
+.filter((item, index) => index <= currentStatusIndex)
+.map(item => `
+<div class="timeline-item timeline-${item.status.toLowerCase().replaceAll(" ","-")}">
+    <div class="status-dot ${item.status.toLowerCase().replaceAll(" ","-")}"></div>
 
     <div class="history-card">
         <b>${item.status}</b><br>
-        ${item.location || ""}<br>
-        ${item.description || ""}
+        ${item.title}<br>
+        ${item.text}
     </div>
 </div>
-`).join("") : "<p>No shipment history available</p>"}
+`).join("")}
 
 `;
 
