@@ -243,6 +243,48 @@ color:#0059b3;
 
 }
 
+.services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 70px 40px;
+}
+
+.service-card {
+    width: 100%;
+    min-height: 230px;
+}
+
+
+#contact {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+
+/* Mobile */
+@media(max-width:900px){
+
+.services {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+}
+
+
+@media(max-width:600px){
+
+.services {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+}
+
+.service-card {
+    min-height: 220px;
+}
+
+}
+
 </style>
 
 </head>
