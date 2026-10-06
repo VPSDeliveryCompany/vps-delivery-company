@@ -1,680 +1,142 @@
 *{
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    margin:0;
-    background:#f4f7fb;
-    color:#1f2937;
+margin:0;
+background:#f4f7fb;
+color:#1f2937;
+overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+padding:70px 20px;
+text-align:center;
+background:#034a91;
+color:white;
+}
+
+.hero h1{
+font-size:42px;
+margin:20px 0;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.hero a,
+.btn{
+display:inline-block;
+background:#ff9900;
+color:white;
+padding:16px 35px;
+border-radius:10px;
+margin:10px;
+text-decoration:none;
 }
 
 
-.dashboard{
-    width:95%;
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
+/* ALL SECTIONS */
+section{
+padding:40px 20px;
+margin:0;
 }
-
-
-h1{
-    text-align:center;
-    font-size:38px;
-    color:#0f172a;
-}
-
 
 h2{
-    text-align:center;
-    color:#1e293b;
+text-align:center;
+color:#003b73;
+font-size:32px;
+margin-bottom:30px;
 }
 
 
-.welcome{
-    text-align:center;
-    margin-bottom:30px;
+/* SERVICES */
+.services{
+text-align:center;
+}
+
+.service-card{
+background:white;
+width:90%;
+max-width:400px;
+margin:20px auto;
+padding:25px;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.service-card h3{
+color:#075985;
 }
 
 
-button{
-    width:100%;
-    padding:14px;
-    margin:8px 0;
-    border:none;
-    border-radius:10px;
-    background:#2563eb;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
+/* CONTACT */
+.contact{
+text-align:center;
+}
+
+.contact button{
+background:#ff9900;
+width:220px;
 }
 
 
-button:hover{
-    background:#1d4ed8;
+/* WHY */
+.why{
+text-align:center;
+}
+
+.feature-card{
+background:white;
+width:90%;
+max-width:400px;
+margin:20px auto;
+padding:25px;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 
-/* STAT CARDS */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    margin:30px 0;
+/* HOW IT WORKS */
+.step-card{
+background:white;
+width:90%;
+max-width:400px;
+margin:20px auto;
+padding:25px;
+border-radius:20px;
+text-align:center;
 }
 
 
-.card{
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+/* NETWORK */
+.network{
+background:#003b73;
+color:white;
+width:90%;
+max-width:700px;
+margin:30px auto;
+padding:40px;
+text-align:center;
 }
-
-
-.card h2{
-    text-align:left;
-    font-size:22px;
-}
-
-
-.card p{
-    font-size:45px;
-    font-weight:bold;
-    margin:10px 0;
-    color:#2563eb;
-}
-
-
-/* SHIPMENT TABLE */
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
-}
-
-
-th{
-    background:#2563eb;
-    color:white;
-    padding:15px;
-    text-align:left;
-}
-
-
-td{
-    padding:15px;
-    border-bottom:1px solid #e5e7eb;
-}
-
-
-tr:hover{
-    background:#f1f5f9;
-}
-
 
 
 /* MOBILE */
-
-@media(max-width:700px){
-
-h1{
-    font-size:28px;
-}
-
-
-.card p{
-    font-size:38px;
-}
-
-
-table{
-    display:block;
-    overflow-x:auto;
-    white-space:nowrap;
-}
-
-}
-
-/* Dashboard Improvements */
-
-button{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:14px;
-    border-radius:10px;
-    font-size:18px;
-    cursor:pointer;
-}
-
-button:hover{
-    opacity:0.9;
-}
-
-
-/* Number styling */
-.card p{
-    color:#2563eb;
-    font-size:55px;
-    font-weight:bold;
-}
-
-
-/* Shipment table header */
-table th{
-    background:#2563eb;
-    color:white;
-    padding:15px;
-}
-
-
-/* Shipment table rows */
-table td{
-    padding:18px;
-}
-
-
-/* Rounded dashboard cards */
-.card{
-    border-radius:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-
-/* Status colors if status text exists */
-.status-Pending{
-    color:#f59e0b;
-    font-weight:bold;
-}
-
-.status-In\ Transit{
-    color:#2563eb;
-    font-weight:bold;
-}
-
-.status-Delivered{
-    color:#16a34a;
-    font-weight:bold;
-}
-
-/* Login Page Design */
-
-.login-container{
-    width:90%;
-    max-width:450px;
-    margin:80px auto;
-    text-align:center;
-}
-
-
-.login-container h1{
-    font-size:40px;
-    margin-bottom:20px;
-}
-
-
-.login-container h2{
-    font-size:32px;
-    margin-bottom:40px;
-}
-
-
-.login-container input{
-    width:100%;
-    padding:18px;
-    margin:10px 0;
-    font-size:20px;
-    border-radius:10px;
-    border:1px solid #ccc;
-}
-
-
-.login-container button{
-    width:100%;
-    padding:18px;
-    margin-top:20px;
-    font-size:22px;
-    border-radius:12px;
-    background:#2563eb;
-    color:white;
-    border:none;
-}
-
-.login-container{
-    width:90%;
-    max-width:500px;
-    margin:60px auto;
-    text-align:center;
-}
-
-.login-container input{
-    display:block;
-    width:100%;
-    height:55px;
-    margin:15px 0;
-    padding:15px;
-    font-size:20px;
-    border-radius:8px;
-    border:1px solid #aaa;
-}
-
-.login-container button{
-    width:100%;
-    height:60px;
-    font-size:24px;
-    border-radius:12px;
-    background:#2563eb;
-    color:white;
-}
-
-/* Create Shipment Page */
-
-.shipment-page input {
-    width: 95%;
-    max-width: 500px;
-    height: 50px;
-    margin: 6px auto;
-    display: block;
-    padding: 10px;
-    font-size: 18px;
-    border-radius: 8px;
-}
-
-.shipment-page button {
-    width: 95%;
-    max-width: 500px;
-    height: 60px;
-    margin: 15px auto;
-    display: block;
-    font-size: 22px;
-    border-radius: 12px;
-}
-
-/* Bigger mobile design */
-
-.hero h1 {
-    font-size: 42px;
-    line-height: 1.2;
-}
-
-.hero p {
-    font-size: 20px;
-}
-
-.hero button,
-.btn {
-    font-size: 18px;
-    padding: 18px 35px;
-    border-radius: 10px;
-}
-
-.services {
-    padding: 50px 20px;
-}
-
-.services h2,
-.contact h2 {
-    font-size: 36px;
-}
-
-.service-card {
-    padding: 35px 25px;
-    min-height: 220px;
-}
-
-.service-card h3 {
-    font-size: 24px;
-}
-
-.service-card p {
-    font-size: 18px;
-}
-
-.service-card span,
-.service-card i {
-    font-size: 35px;
-}
-
-.contact p {
-    font-size: 20px;
-}
-
-.contact button {
-    width: 220px;
-    height: 60px;
-    font-size: 18px;
-}
-
-
-/* Mobile adjustment */
 @media(max-width:600px){
-
-.hero h1 {
-    font-size: 36px;
-}
-
-.hero p {
-    font-size: 18px;
-}
-
-.service-card {
-    margin-bottom:20px;
-}
-
-.services h2,
-.contact h2 {
-    font-size:30px;
-}
-
-}
-
-section{
-    margin-bottom:40px;
-}
-
-.network{
-    width:90%;
-    max-width:800px;
-    min-height:220px;
-    padding:40px 20px;
-    margin:40px auto;
-    text-align:center;
-}
-
-h2{
-    color:#003b73;
-    font-size:32px;
-    text-align:center;
-}
-
-.how{
-    margin-top:20px !important;
-}
-
-#contact{
-    margin-bottom:20px !important;
-}
-
-/* FINAL HOMEPAGE CLEANUP */
-
-section{
-    padding-top:40px !important;
-    padding-bottom:40px !important;
-    margin:0 !important;
-}
-
-h2{
-    color:#003b73;
-    font-size:30px;
-    text-align:center;
-    margin-bottom:30px;
-}
-
-/* Services */
-.services{
-    padding-top:30px !important;
-}
-
-.services div{
-    margin-bottom:25px !important;
-}
-
-/* Contact */
-#contact{
-    padding-top:30px !important;
-    padding-bottom:30px !important;
-}
-
-/* Why choose */
-.why{
-    padding-top:30px !important;
-}
-
-.why div{
-    margin-bottom:20px !important;
-}
-
-/* How it works */
-.how{
-    padding-top:30px !important;
-    margin-top:0 !important;
-}
-
-/* Network box */
-.network{
-    width:90% !important;
-    max-width:700px !important;
-    min-height:200px !important;
-    padding:40px 20px !important;
-    margin:30px auto !important;
-}
-
-/* Buttons */
-.hero a{
-    padding:20px 45px !important;
-    font-size:20px !important;
-    border-radius:12px !important;
-}
-
-/* Mobile spacing */
-@media(max-width:600px){
-
-.hero{
-    padding:70px 20px !important;
-}
 
 .hero h1{
-    font-size:36px !important;
+font-size:34px;
 }
 
-.services div,
-.why div,
-.how div{
-    width:90% !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-}
-
-}
-
-/* FINAL MOBILE SPACING FIX */
-
-body{
-    overflow-x:hidden;
-}
-
-section{
-    padding:25px 15px !important;
-    margin:0 !important;
-}
-
-/* Reduce gaps between sections */
-.services,
-.why,
-.how,
-.contact{
-    margin-top:0 !important;
-    padding-top:25px !important;
-    padding-bottom:25px !important;
-}
-
-/* Section titles */
 h2{
-    margin:10px 0 25px !important;
-}
-
-/* Cards */
-.card,
-.service-card,
-.feature-card,
-.step-card{
-    margin:15px auto !important;
-    padding:25px 15px !important;
-}
-
-/* Contact spacing */
-.contact{
-    min-height:auto !important;
-}
-
-/* Remove giant empty spaces */
-.why-section,
-.how-section{
-    height:auto !important;
-    min-height:0 !important;
-}
-
-/* Network box */
-.network{
-    margin:25px auto !important;
-    min-height:160px !important;
-}
-
-/* Mobile */
-@media(max-width:600px){
-
-.hero{
-    min-height:370px !important;
-    padding:50px 15px !important;
-}
-
-.hero h1{
-    font-size:34px !important;
-}
-
-}
-
-/* COMPLETE SPACING RESET */
-
-*{
-    box-sizing:border-box;
+font-size:28px;
 }
 
 section{
-    margin:0 !important;
-    padding:40px 15px !important;
+padding:30px 15px;
 }
 
-/* remove empty vertical gaps */
-.services,
-.contact,
-.why,
-.how,
-.network{
-    margin-top:0 !important;
-    margin-bottom:0 !important;
-}
-
-/* headings */
-h2{
-    margin-top:0 !important;
-    margin-bottom:20px !important;
-}
-
-/* all cards */
-.card,
-.service-card,
-.feature-card,
-.step-card,
-.box{
-    margin:15px auto !important;
-}
-
-/* stop large blank areas */
-div{
-    max-height:none;
-}
-
-/* mobile tightening */
-@media(max-width:600px){
-
-.hero{
-    padding:40px 15px !important;
-}
-
-section{
-    min-height:auto !important;
-}
-
-.services,
-.contact,
-.why,
-.how{
-    height:auto !important;
-}
-
-}
-
-/* FORCE REMOVE OLD EMPTY SPACES */
-
-.hero,
-.services,
-.contact,
-.why,
-.how,
-.network {
-    display:block !important;
-    height:auto !important;
-    min-height:0 !important;
-    margin-top:0 !important;
-    margin-bottom:0 !important;
-    padding-top:35px !important;
-    padding-bottom:35px !important;
-}
-
-
-/* remove invisible spacing */
-.services::before,
-.services::after,
-.contact::before,
-.contact::after,
-.why::before,
-.why::after,
-.how::before,
-.how::after {
-    display:none !important;
-}
-
-
-/* cards tighter */
-.service-card,
-.card,
-.feature-card,
-.step-card {
-    margin:12px auto !important;
-}
-
-
-/* headings closer */
-h2 {
-    margin:0 0 20px 0 !important;
-}
-
-
-/* network box */
-.network {
-    margin:30px auto !important;
-}
-
-
-/* mobile */
-@media(max-width:600px){
-
-section{
-    padding-left:15px !important;
-    padding-right:15px !important;
-}
-
-}
-
-.service-card,
-.card {
-    padding:18px !important;
-    min-height:120px !important;
 }
