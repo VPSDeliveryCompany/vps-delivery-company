@@ -610,3 +610,71 @@ section{
 }
 
 }
+
+/* FORCE REMOVE OLD EMPTY SPACES */
+
+.hero,
+.services,
+.contact,
+.why,
+.how,
+.network {
+    display:block !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+    padding-top:35px !important;
+    padding-bottom:35px !important;
+}
+
+
+/* remove invisible spacing */
+.services::before,
+.services::after,
+.contact::before,
+.contact::after,
+.why::before,
+.why::after,
+.how::before,
+.how::after {
+    display:none !important;
+}
+
+
+/* cards tighter */
+.service-card,
+.card,
+.feature-card,
+.step-card {
+    margin:12px auto !important;
+}
+
+
+/* headings closer */
+h2 {
+    margin:0 0 20px 0 !important;
+}
+
+
+/* network box */
+.network {
+    margin:30px auto !important;
+}
+
+
+/* mobile */
+@media(max-width:600px){
+
+section{
+    padding-left:15px !important;
+    padding-right:15px !important;
+}
+
+}
+
+.service-card,
+.card {
+    padding:18px !important;
+    min-height:120px !important;
+}
