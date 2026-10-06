@@ -21,6 +21,9 @@ import { supabase } from "./js/supabase.js";
 
 document.getElementById("login").onclick = async()=>{
 
+  const email = document.getElementById("email");
+const password = document.getElementById("password");
+
 const {data,error} = await supabase.auth.signInWithPassword({
   email: email.value,
   password: password.value
