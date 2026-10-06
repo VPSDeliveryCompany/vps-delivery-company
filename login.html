@@ -28,13 +28,10 @@ import { login } from "./js/auth.js";
 
 window.userLogin = async function(){
 
-const email = document.getElementById("email").value.trim();
-const password = document.getElementById("password").value.trim();
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
 
-console.log("Email:", email);
-console.log("Password:", password);
-
-await login(email, password);
+login(email,password);
 
 }
 
