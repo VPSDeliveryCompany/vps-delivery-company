@@ -140,3 +140,53 @@ padding:30px 15px;
 }
 
 }
+
+/* FINAL SPACING CONTROL */
+
+#services{
+    padding-bottom:20px !important;
+}
+
+#contact{
+    padding-top:20px !important;
+    padding-bottom:20px !important;
+    margin:0 !important;
+}
+
+.why{
+    padding-top:20px !important;
+    padding-bottom:20px !important;
+    margin:0 auto !important;
+}
+
+.process{
+    padding-top:20px !important;
+    padding-bottom:20px !important;
+    margin:0 auto !important;
+}
+
+.stats{
+    margin-top:20px !important;
+    padding:50px 20px !important;
+}
+
+
+/* Remove extra card spacing */
+.why-box{
+    margin:15px auto !important;
+}
+
+.process .why-box{
+    margin:15px auto !important;
+}
+
+
+/* Mobile */
+@media(max-width:600px){
+
+section{
+    padding-top:20px !important;
+    padding-bottom:20px !important;
+}
+
+}
