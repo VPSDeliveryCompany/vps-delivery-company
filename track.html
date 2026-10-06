@@ -315,38 +315,7 @@ return;
 .eq("tracking_number", number)
 .order("created_at", { ascending: true });
 
-  const history = [
-{
-    status: "Shipment Created",
-    location: "Warehouse",
-    description: "Package received and registered"
-},
-{
-    status: "Picked Up",
-    location: "Sender Location",
-    description: "Package collected from sender"
-},
-{
-    status: "In Transit",
-    location: "International Transit",
-    description: "Shipment is moving"
-},
-{
-    status: "Arrived",
-    location: "Destination Facility",
-    description: "Package arrived in destination country"
-},
-{
- status: "Delivered",
- location: "Receiver Address",
- description: "Package delivered successfully"
-},
-{
- status: "Canceled",
- location: "Cancelled",
- description: "Shipment was canceled"
-}
-];
+  const history = historyData || [];
 console.log("History:", history);
 
 let currentStatusIndex = history.findIndex(item => item.status === data.status);
@@ -385,7 +354,7 @@ ${data.status}
 <div class="timeline">
 
 <h3>Shipment History</h3>
-${historyData && historyData.length ? historyData.map(item => `
+${history.length ? history.map(item => `
 <div class="timeline-item">
     <div class="status-dot"></div>
 
