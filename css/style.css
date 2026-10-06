@@ -295,3 +295,81 @@ table td{
     font-size: 22px;
     border-radius: 12px;
 }
+
+/* Bigger mobile design */
+
+.hero h1 {
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+.hero button,
+.btn {
+    font-size: 18px;
+    padding: 18px 35px;
+    border-radius: 10px;
+}
+
+.services {
+    padding: 50px 20px;
+}
+
+.services h2,
+.contact h2 {
+    font-size: 36px;
+}
+
+.service-card {
+    padding: 35px 25px;
+    min-height: 220px;
+}
+
+.service-card h3 {
+    font-size: 24px;
+}
+
+.service-card p {
+    font-size: 18px;
+}
+
+.service-card span,
+.service-card i {
+    font-size: 35px;
+}
+
+.contact p {
+    font-size: 20px;
+}
+
+.contact button {
+    width: 220px;
+    height: 60px;
+    font-size: 18px;
+}
+
+
+/* Mobile adjustment */
+@media(max-width:600px){
+
+.hero h1 {
+    font-size: 36px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.service-card {
+    margin-bottom:20px;
+}
+
+.services h2,
+.contact h2 {
+    font-size:30px;
+}
+
+}
