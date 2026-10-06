@@ -482,3 +482,70 @@ h2{
 }
 
 }
+
+/* FINAL MOBILE SPACING FIX */
+
+body{
+    overflow-x:hidden;
+}
+
+section{
+    padding:25px 15px !important;
+    margin:0 !important;
+}
+
+/* Reduce gaps between sections */
+.services,
+.why,
+.how,
+.contact{
+    margin-top:0 !important;
+    padding-top:25px !important;
+    padding-bottom:25px !important;
+}
+
+/* Section titles */
+h2{
+    margin:10px 0 25px !important;
+}
+
+/* Cards */
+.card,
+.service-card,
+.feature-card,
+.step-card{
+    margin:15px auto !important;
+    padding:25px 15px !important;
+}
+
+/* Contact spacing */
+.contact{
+    min-height:auto !important;
+}
+
+/* Remove giant empty spaces */
+.why-section,
+.how-section{
+    height:auto !important;
+    min-height:0 !important;
+}
+
+/* Network box */
+.network{
+    margin:25px auto !important;
+    min-height:160px !important;
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+.hero{
+    min-height:370px !important;
+    padding:50px 15px !important;
+}
+
+.hero h1{
+    font-size:34px !important;
+}
+
+}
