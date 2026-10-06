@@ -292,7 +292,7 @@ import { supabase } from "./js/supabase.js";
 
 document.getElementById("trackBtn").onclick = async () => {
 
-const number = document.getElementById("tracking").value;
+const number = document.getElementById("tracking").value.trim();
 
 const { data, error } = await supabase
 .from("deliveries")
