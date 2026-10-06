@@ -549,3 +549,64 @@ h2{
 }
 
 }
+
+/* COMPLETE SPACING RESET */
+
+*{
+    box-sizing:border-box;
+}
+
+section{
+    margin:0 !important;
+    padding:40px 15px !important;
+}
+
+/* remove empty vertical gaps */
+.services,
+.contact,
+.why,
+.how,
+.network{
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+}
+
+/* headings */
+h2{
+    margin-top:0 !important;
+    margin-bottom:20px !important;
+}
+
+/* all cards */
+.card,
+.service-card,
+.feature-card,
+.step-card,
+.box{
+    margin:15px auto !important;
+}
+
+/* stop large blank areas */
+div{
+    max-height:none;
+}
+
+/* mobile tightening */
+@media(max-width:600px){
+
+.hero{
+    padding:40px 15px !important;
+}
+
+section{
+    min-height:auto !important;
+}
+
+.services,
+.contact,
+.why,
+.how{
+    height:auto !important;
+}
+
+}
