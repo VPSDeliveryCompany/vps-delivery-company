@@ -373,3 +373,22 @@ table td{
 }
 
 }
+
+section{
+    margin-bottom:40px;
+}
+
+.network{
+    width:90%;
+    max-width:800px;
+    min-height:220px;
+    padding:40px 20px;
+    margin:40px auto;
+    text-align:center;
+}
+
+h2{
+    color:#003b73;
+    font-size:32px;
+    text-align:center;
+}
