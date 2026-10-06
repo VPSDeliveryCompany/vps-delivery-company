@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>International Shipping</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="shipment-page">
+
+<div class="form-container">
+
+<h1>VPS Delivery Company</h1>
+
+<h2>Create Shipment</h2>
+
+<input id="sender" placeholder="Sender Name">
+
+<input id="senderCountry" placeholder="Sender Country">
+
+<input id="receiver" placeholder="Receiver Name">
+
+<input id="receiverCountry" placeholder="Receiver Country">
+
+<input id="pickupAddress" placeholder="Pickup Address">
+
+<input id="deliveryAddress" placeholder="Receiver Address">
+  
+<input id="package" placeholder="Package Description">
+
+<input id="weight" placeholder="Package Weight">
+
+<input id="method" placeholder="Shipping Method (Air/Sea/Express)">
+
+<button id="saveBtn">Create Shipment</button>
+
+</div>
+
+</>
+
+
+<script type="module">
+
+import { supabase } from "./js/supabase.js";
+
+
+async function createShipment(){
+
+const tracking_number = "VPS" + Math.floor(100000 + Math.random() * 900000);
+
+const { data, error } = await supabase
+.from("deliveries")
+.insert({
+
+sender_name: document.getElementById("sender").value,
+
+sender_country: document.getElementById("senderCountry").value,
+
+receiver_name: document.getElementById("receiver").value,
+
+receiver_country: document.getElementById("receiverCountry").value,
+
+package_description: document.getElementById("package").value,
+
+weight: document.getElementById("weight").value,
+
+shipping_method: document.getElementById("method").value,
+
+pickup_address: document.getElementById("pickupAddress").value,
+
+delivery_address: document.getElementById("deliveryAddress").value,
+
+tracking_number: tracking_number,
+status: "Pending"
+})
+.select();
+
+
+if(error){
+
+alert(error.message);
+
+}else{
+
+await supabase
+.from("shipment_history")
+.insert({
+shipment_id: data[0].id,
+status: "Shipment Created",
+location: "Warehouse"
+});
+
+alert("Shipment request submitted successfully!\n\nOur team will review your request and contact you shortly.");
+
+}
+
+}
+
+document.getElementById("saveBtn").onclick = createShipment;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VPS Delivery Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<h1>VPS Delivery Company</h1>
+
+<h2>Admin Dashboard</h2>
+
+<div class="welcome">
+<h3>Welcome, Admin</h3>
+<button onclick="logout()">Logout</button>
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<h2>Total Shipments</h2>
+<p id="total">0</p>
+</div>
+
+<div class="card">
+<h2>Pending</h2>
+<p id="pending">0</p>
+</div>
+
+<div class="card">
+<h2>In Transit</h2>
+<p id="transit">0</p>
+</div>
+
+<div class="card">
+<h2>Delivered</h2>
+<p id="delivered">0</p>
+</div>
+
+</div>
+
+
+<div class="menu">
+
+<h2>Delivery Management</h2>
+
+<button onclick="location.href='add-delivery.html'">
+Add Shipment
+</button>
+
+
+<h2>Shipment Management</h2>
+
+<div class="shipment-table">
+<table border="1">
+
+<tr>
+<th>Tracking Number</th>
+<th>Sender</th>
+<th>Receiver</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+<tbody id="shipmentList"></tbody>
+
+</table>
+
+
+</div>
+
+<script type="module">
+
+import { supabase } from "./js/supabase.js";
+
+
+// CHECK LOGIN
+async function checkUser(){
+
+const { data } = await supabase.auth.getSession();
+
+if(!data.session){
+
+window.location.href = "login.html";
+
+}
+
+}
+
+
+
+// LOGOUT
+window.logout = async function(){
+
+await supabase.auth.signOut();
+
+window.location.href = "login.html";
+
+}
+
+
+// LOAD DASHBOARD NUMBERS
+async function loadStats(){
+
+const { data, error } = await supabase
+.from("deliveries")
+.select("status");
+
+
+if(error){
+
+console.log(error.message);
+return;
+
+}
+
+
+document.getElementById("total").innerText = data.length;
+
+
+document.getElementById("pending").innerText =
+data.filter(x =>
+x.status === "Shipment Created" ||
+x.status === "Picked Up"
+).length;
+
+
+document.getElementById("transit").innerText =
+data.filter(x =>
+x.status === "In Transit" ||
+x.status === "Arrived"
+).length;
+
+
+document.getElementById("delivered").innerText =
+data.filter(x =>
+x.status === "Delivered"
+).length;
+
+
+}
+
+
+// LOAD SHIPMENTS TABLE
+async function loadShipments(){
+
+const { data, error } = await supabase
+.from("deliveries")
+.select("*")
+.order("created_at",{ascending:false});
+
+
+if(error){
+
+console.log(error.message);
+return;
+
+}
+
+
+let list = document.getElementById("shipmentList");
+
+list.innerHTML="";
+
+
+data.forEach(ship=>{
+
+
+list.innerHTML += `
+
+<tr>
+
+<td>${ship.tracking_number || ""}</td>
+
+<td>${ship.sender_name || ""}</td>
+
+<td>${ship.receiver_name || ""}</td>
+
+<td>${ship.status || ""}</td>
+
+<td>
+
+<button onclick="updateStatus('${ship.id}')">
+Update
+</button>
+
+<button onclick="deleteShipment('${ship.id}')">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+
+});
+
+
+}
+
+
+
+// UPDATE STATUS
+window.updateStatus = async function(id){
+
+let newStatus = prompt(
+`Enter new status:
+
+Shipment Created
+Picked Up
+In Transit
+Arrived
+Delivered
+Canceled`
+);
+
+if(!newStatus) return;
+
+
+
+const { error } = await supabase
+.from("deliveries")
+.update({
+    status: newStatus
+})
+.eq("id", id);
+
+
+
+if(error){
+ alert(error.message);
+}else{
+ alert("Shipment updated successfully");
+ loadStats();
+ loadShipments();
+}
+
+}
+
+  
+window.deleteShipment = async function(id){
+
+let confirmDelete = confirm("Delete this shipment?");
+
+if(!confirmDelete) return;
+
+const { error } = await supabase
+.from("deliveries")
+.delete()
+.eq("id", id);
+
+if(error){
+alert(error.message);
+return;
+}
+
+alert("Shipment deleted successfully");
+location.reload();
+
+}
+
+
+// START DASHBOARD
+
+checkUser();
+loadStats();
+loadShipments();
+
+
+</script>
+  
+</body>
+</html>

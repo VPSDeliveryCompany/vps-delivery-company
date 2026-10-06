@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VPS Delivery Login</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="login-container">
+
+<h1>VPS Delivery Company</h1>
+
+<h2>Login</h2>
+
+<input id="email" placeholder="Email">
+
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="userLogin()">Login</button>
+
+</div>
+
+
+<script type="module">
+
+import { login } from "./js/auth.js";
+
+window.userLogin = async function(){
+
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+
+login(email,password);
+
+}
+
+</script>
+
+</body>
+</html>

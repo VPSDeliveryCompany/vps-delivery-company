@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>View Shipments</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h1>VPS Delivery Company</h1>
+
+<div class="shipments-container">
+<table>
+<thead>
+<tr>
+<th>Sender</th>
+<th>Sender Country</th>
+<th>Receiver</th>
+<th>Receiver Country</th>
+<th>Package</th>
+<th>Weight</th>
+<th>Shipping Method</th>
+<th>Tracking Number</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="shipments"></tbody>
+
+</table>
+</div>
+
+
+<script type="module">
+
+import { supabase } from "./js/supabase.js";
+
+
+async function loadShipments(){
+
+const result = await supabase
+.from("deliveries")
+.select("*");
+
+
+const data = result.data || [];
+const error = result.error;
+
+if(error){
+alert(error.message);
+return;
+}
+
+
+let table = document.getElementById("shipments");
+
+table.innerHTML="";
+
+
+data.forEach(item=>{
+
+table.innerHTML += `
+
+<tr>
+
+<td>${item.sender_name}</td>
+<td>${item.sender_country}</td>
+<td>${item.receiver_name}</td>
+<td>${item.receiver_country}</td>
+<td>${item.package_description}</td>
+<td>${item.weight}</td>
+<td>${item.shipping_method}</td>
+<td>${item.tracking_number}</td>
+
+
+<td>
+<select onchange="updateStatus('${item.id}', this.value)">
+<option>${item.status}</option>
+<option>Pending</option>
+<option>Picked Up</option>
+<option>In Transit</option>
+<option>Delivered</option>
+<option>Cancelled</option>
+</select>
+</td>
+
+<td>
+<button onclick="deleteShipment('${item.id}')">
+Delete
+</button>
+</td>
+
+
+</tr>
+
+`;
+
+});
+
+
+}
+
+
+
+window.updateStatus = async function(id,status){
+
+
+const {error}=await supabase
+.from("deliveries")
+.update({status:status})
+.eq("id",id);
+
+
+
+if(error){
+
+alert(error.message);
+return;
+
+}
+
+  const historyResult = await supabase
+.from("shipment_history")
+.insert({
+  shipment_id: id,
+  status: status,
+  location: "International"
+});
+
+console.log(historyResult);
+
+if(historyResult.error){
+  alert(historyResult.error.message);
+}
+
+alert("Status updated successfully");
+
+console.log("Updated ID:", id, "New Status:", status);
+
+loadShipments();
+
+
+}
+
+
+
+window.deleteShipment = async function(id){
+
+if(!confirm("Are you sure you want to delete this shipment?")){
+return;
+}
+
+const {error}=await supabase
+.from("deliveries")
+.delete()
+.eq("id",id);
+
+
+if(error){
+alert(error.message);
+return;
+}
+
+alert("Shipment deleted successfully");
+
+loadShipments();
+
+}
+
+
+
+loadShipments();
+  
+console.log("LOAD STARTED");
+
+</script>
+</body>
+</html>
