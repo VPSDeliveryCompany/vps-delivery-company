@@ -372,3 +372,23 @@ body{
     padding:6px 12px;
     border-radius:6px;
 }
+
+.menu{
+    text-align:center;
+    margin:20px 0;
+}
+
+.menu button{
+    background:#ff9800;
+    color:white;
+    border:none;
+    padding:12px 35px;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.menu button:hover{
+    background:#e68900;
+}
