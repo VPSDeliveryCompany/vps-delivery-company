@@ -724,3 +724,91 @@ body{
         font-size: 18px;
     }
 }
+
+/* =================================
+   FIX TRACKING PAGE HORIZONTAL OVERFLOW
+================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.shipment-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.shipment-page .form-container {
+    width: 100%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Shipment history */
+.shipment-history,
+.history,
+.timeline {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* History cards */
+.timeline-item,
+.history-item,
+.timeline-content,
+.history-card {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Prevent long content from pushing the page sideways */
+.timeline-item *,
+.history-item *,
+.timeline-content *,
+.history-card * {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .shipment-page {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .shipment-page .form-container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .timeline,
+    .shipment-history,
+    .history {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .timeline-item,
+    .history-item,
+    .timeline-content,
+    .history-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
