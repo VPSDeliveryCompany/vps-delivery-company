@@ -382,7 +382,15 @@ return;
 {
     status: "In Transit",
     location: "International Transit",
-    description: "Shipment is moving"
+    description: `Shipment is moving by ${
+    data.shipping_method?.toLowerCase() === "air"
+        ? "air"
+        : data.shipping_method?.toLowerCase() === "sea"
+        ? "sea"
+        : data.shipping_method?.toLowerCase() === "express"
+        ? "express"
+        : data.shipping_method
+}`
 },
 {
     status: "Arrived",
