@@ -298,3 +298,48 @@ body{
     margin:15px !important;
     box-shadow:0 10px 25px rgba(0,0,0,0.15) !important;
 }
+
+/* DASHBOARD ONLY */
+
+.dashboard .cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+.dashboard .card{
+    width:220px;
+}
+
+.dashboard button{
+    background:#ff9800;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.dashboard table{
+    width:90%;
+    margin:20px auto;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.dashboard th{
+    background:#003b73;
+    color:white;
+    padding:12px;
+}
+
+.dashboard td{
+    padding:10px;
+    text-align:center;
+}
+
+.dashboard tr:nth-child(even){
+    background:#f4f7fb;
+}
