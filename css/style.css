@@ -60,7 +60,7 @@ text-align:center;
 
 .service-card{
 background:white;
-width:90%;
+width:100%;
 max-width:400px;
 margin:20px auto;
 padding:25px;
@@ -80,7 +80,7 @@ text-align:center;
 
 .contact button{
 background:#ff9900;
-width:220px;
+width:250px;
 }
 
 
