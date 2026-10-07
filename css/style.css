@@ -392,3 +392,20 @@ body{
 .menu button:hover{
     background:#e68900;
 }
+.menu{
+    width:100%;
+    text-align:center;
+    margin:25px 0;
+}
+
+.menu button{
+    display:block;
+    margin:0 auto;
+    background:#ff9800;
+    color:white;
+    border:none;
+    padding:14px 45px;
+    font-size:16px;
+    border-radius:10px;
+    cursor:pointer;
+}
