@@ -409,3 +409,54 @@ body{
     border-radius:10px;
     cursor:pointer;
 }
+
+/* LOGIN PAGE */
+.login-container{
+    width:90%;
+    max-width:420px;
+    margin:70px auto;
+    background:white;
+    padding:35px 25px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+}
+
+.login-container h1{
+    color:#003b73;
+    margin-bottom:10px;
+}
+
+.login-container h2{
+    color:#003b73;
+    margin-bottom:25px;
+}
+
+.login-container input{
+    display:block;
+    width:90%;
+    max-width:350px;
+    margin:12px auto;
+    padding:13px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+    box-sizing:border-box;
+}
+
+.login-container button{
+    width:90%;
+    max-width:350px;
+    margin-top:10px;
+    padding:13px;
+    background:#ff9800;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.login-container button:hover{
+    background:#e68900;
+}
