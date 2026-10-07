@@ -545,3 +545,68 @@ body{
         font-size: 21px;
     }
 }
+
+/* BIGGER CREATE SHIPMENT FORM */
+
+.shipment-page {
+    padding: 30px 15px;
+}
+
+.shipment-page .form-container {
+    width: 95%;
+    max-width: 850px;
+    padding: 45px 35px;
+    margin: 20px auto;
+}
+
+.shipment-page .form-container h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.shipment-page .form-container h2 {
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+
+.shipment-page .form-container input {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    min-height: 60px;
+    margin-bottom: 20px;
+}
+
+.shipment-page .form-container button {
+    width: 100%;
+    padding: 22px;
+    font-size: 20px;
+    min-height: 65px;
+    font-weight: bold;
+}
+
+/* MOBILE SCREEN */
+@media (max-width: 600px) {
+    .shipment-page .form-container {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .shipment-page .form-container h1 {
+        font-size: 27px;
+    }
+
+    .shipment-page .form-container h2 {
+        font-size: 24px;
+    }
+
+    .shipment-page .form-container input {
+        font-size: 17px;
+        min-height: 58px;
+    }
+
+    .shipment-page .form-container button {
+        font-size: 19px;
+        min-height: 62px;
+    }
+}
