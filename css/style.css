@@ -190,3 +190,32 @@ section{
 }
 
 }
+
+/* FINAL GAP REMOVER */
+
+.why,
+.process,
+.stats{
+    padding-top:20px !important;
+    padding-bottom:20px !important;
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+}
+
+#contact{
+    padding-bottom:10px !important;
+}
+
+.why h2,
+.process h2{
+    margin-top:0 !important;
+    margin-bottom:20px !important;
+}
+
+.why-box{
+    margin:10px auto !important;
+}
+
+.stats{
+    margin-top:20px !important;
+}
