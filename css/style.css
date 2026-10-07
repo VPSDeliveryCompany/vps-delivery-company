@@ -343,3 +343,32 @@ body{
 .dashboard tr:nth-child(even){
     background:#f4f7fb;
 }
+
+.shipment-table table{
+    width:90%;
+    margin:20px auto;
+    border-collapse:collapse;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.shipment-table th{
+    background:#003b73;
+    color:white;
+    padding:12px;
+}
+
+.shipment-table td{
+    padding:12px;
+    text-align:center;
+}
+
+.shipment-table button{
+    background:#ff9800;
+    color:white;
+    border:none;
+    padding:6px 12px;
+    border-radius:6px;
+}
