@@ -610,3 +610,117 @@ body{
         min-height: 62px;
     }
 }
+
+/* ================================
+   CREATE SHIPMENT - LARGE MOBILE UI
+================================ */
+
+.shipment-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 15px;
+}
+
+.shipment-page .form-container {
+    width: 95%;
+    max-width: 750px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.shipment-page .form-container h1 {
+    text-align: center;
+    color: #034a91;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.shipment-page .form-container h2 {
+    text-align: center;
+    color: #034a91;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* All input fields */
+.shipment-page .form-container input {
+    display: block;
+    width: 100%;
+    height: 58px;
+    padding: 0 18px;
+    margin-bottom: 16px;
+
+    font-size: 17px;
+    color: #333;
+
+    background: #fff;
+    border: 1px solid #d8dce2;
+    border-radius: 9px;
+
+    outline: none;
+}
+
+.shipment-page .form-container input:focus {
+    border-color: #034a91;
+    box-shadow: 0 0 0 3px rgba(3, 74, 145, 0.12);
+}
+
+/* Create Shipment button */
+.shipment-page .form-container button {
+    width: 100%;
+    height: 58px;
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #ff9900;
+    color: #fff;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.shipment-page .form-container button:hover {
+    background: #e88a00;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .shipment-page {
+        padding: 25px 10px;
+    }
+
+    .shipment-page .form-container {
+        width: 100%;
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+
+    .shipment-page .form-container h1 {
+        font-size: 28px;
+    }
+
+    .shipment-page .form-container h2 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .shipment-page .form-container input {
+        height: 62px;
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .shipment-page .form-container button {
+        height: 62px;
+        font-size: 18px;
+    }
+}
