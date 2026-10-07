@@ -282,3 +282,19 @@ section{
     font-weight:bold;
     color:#003b73;
 }
+
+body{
+    background:#f4f7fb !important;
+}
+
+.dashboard{
+    padding:30px !important;
+}
+
+.card{
+    background:white !important;
+    border-radius:15px !important;
+    padding:25px !important;
+    margin:15px !important;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15) !important;
+}
